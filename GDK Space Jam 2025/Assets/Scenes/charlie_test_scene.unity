@@ -404,6 +404,10 @@ PrefabInstance:
       value: TestShip
       objectReference: {fileID: 0}
     - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+      propertyPath: maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: backSpeed
       value: 0.01
       objectReference: {fileID: 0}

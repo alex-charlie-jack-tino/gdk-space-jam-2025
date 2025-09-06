@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bullet;
     public int dashType;
     public bool holdToFire;
-
+    [SerializeField] float maxSpeed = 4f;
     // Actions
     InputAction move;
     InputAction shoot;
@@ -71,9 +71,9 @@ public class PlayerMovement : MonoBehaviour
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
         transform.Rotate(rotation);
-        if (movement.magnitude < 20){
         movement += deltaVelocity;
-        }
+        float clampedMovement = Mathf.Clamp(movement.magnitude, 0, maxSpeed);
+        movement = movement.normalized * clampedMovement;
         transform.Translate(movement, Space.World);
     }
 
