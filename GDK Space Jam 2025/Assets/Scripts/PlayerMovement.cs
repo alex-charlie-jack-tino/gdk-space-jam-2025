@@ -60,12 +60,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //screen wrap
-        if (transform.position.y > 14 || transform.position.y < -14)
+        if (transform.position.z > 15 || transform.position.z < -15)
         {
-            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y * -1, transform.position.z);
+            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z*-1);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
-        if (transform.position.x > 29 || transform.position.x < -29)
+        if (transform.position.x > 25 || transform.position.x < -25)
         {
             Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         }
         */
         //add new rotation to existing rotation
-        rotation += new Vector3(0, 0, moveInput.x * turnSpeed);
+        rotation += new Vector3(moveInput.x * turnSpeed, 0, 0);
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
