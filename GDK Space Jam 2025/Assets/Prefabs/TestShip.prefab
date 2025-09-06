@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7759872968604536369}
   - component: {fileID: 979028198545406435}
   - component: {fileID: -1761024399234225582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   bullet: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
   dashType: 0
   holdToFire: 0
+  cooldownTime: 0
 --- !u!70 &979028198545406435
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

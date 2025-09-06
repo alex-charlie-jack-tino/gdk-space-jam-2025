@@ -6,11 +6,14 @@ public class BulletMovement : MonoBehaviour
     // Bullet Stats
     public float bulletSpeed;
     public int bulletType;
+    public int bounces;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Rigidbody2D rigidbody;
+
+    void Awake()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody.AddRelativeForce(new Vector2(0,1) * bulletSpeed);
     }
 
     // Update is called once per frame
@@ -33,7 +36,10 @@ public class BulletMovement : MonoBehaviour
     {
        if (collision.gameObject.layer == 6)
         {
-            Destroy(this.gameObject);
+            if (bounces == 0)
+                Destroy(this.gameObject);
+            else
+                bounces--;
         }
     }
 }
