@@ -26,19 +26,9 @@ public class PlayerMovement : MonoBehaviour
     float currentSpeed;
     Vector3 rotation;
 
-    private CharacterController controller;
-    private UnityEngine.InputSystem.Keyboard keyboard;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        keyboard = UnityEngine.InputSystem.Keyboard.current;
-        controller = gameObject.AddComponent<CharacterController>();
-        if (keyboard == null)
-            return;
-        forwardSpeed = 5;
-        backSpeed = 5;
-        turnSpeed = 5;
 
     }
 
@@ -63,12 +53,6 @@ public class PlayerMovement : MonoBehaviour
     {
         move.performed -= Move;
         move.canceled -= Move;
-        
-        if (keyboard.wKey.isPressed)
-        {
-            Vector3 forward = new Vector3(forwardSpeed, 0, 0);
-            controller.Move(forward);
-        }
     }
 
     // Update is called once per frame
