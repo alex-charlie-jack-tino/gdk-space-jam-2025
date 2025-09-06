@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Vector3 movement;
     Vector3 deltaVelocity;
+    Vector3 deltaRotation;
     float currentSpeed;
     Vector3 rotation;
 
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
+        rotation += deltaRotation;
         transform.Rotate(rotation);
         movement += deltaVelocity;
         float clampedMovement = Mathf.Clamp(movement.magnitude, 0, maxSpeed);
@@ -96,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
         */
         //add new rotation to existing rotation
-        rotation += new Vector3(moveInput.x * turnSpeed, 0, 0);
+        deltaRotation = new Vector3(moveInput.x * turnSpeed, 0, 0);
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
