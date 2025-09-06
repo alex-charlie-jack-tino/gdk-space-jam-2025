@@ -49,17 +49,19 @@ public class PlayerMovement : MonoBehaviour
     {
         move.performed += Move;
         move.canceled += Move;
-        shoot.performed += Shoot;
-        if (weaponType == 4)
-        {
-            shoot.canceled += Shoot;
-        }
+        //shoot.performed += Shoot;
+
+        //if (weaponType == 4)
+        //{
+        //    shoot.canceled += Shoot;
+        //}
     }
 
     private void OnDisable()
     {
         move.performed -= Move;
         move.canceled -= Move;
+        //shoot.performed -= Shoot;
     }
 
     // Update is called once per frame

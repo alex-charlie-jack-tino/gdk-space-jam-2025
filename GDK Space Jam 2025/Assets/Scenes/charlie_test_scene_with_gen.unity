@@ -516,8 +516,8 @@ MonoBehaviour:
   _srcPrefabs:
   - {fileID: 2765436441447164630, guid: 09f533e9fb0083f40a7cad4bbb62bd26, type: 3}
   - {fileID: 6008925017915394576, guid: da0f4c36735c8e242a4c3c8513338ac5, type: 3}
-  - {fileID: 3484162856819534457, guid: 20be82f376c9182429f59c36dc5db0cf, type: 3}
   - {fileID: 6008925017915394576, guid: da0f4c36735c8e242a4c3c8513338ac5, type: 3}
+  - {fileID: 3484162856819534457, guid: 20be82f376c9182429f59c36dc5db0cf, type: 3}
   _mapContainer: {fileID: 1617654786}
   _mapDimensions: {x: 48, y: 27}
   _perlinNoiseThreshold: 0.4
@@ -540,7 +540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1646988381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!1001 &2003800004
+--- !u!1001 &1814720422
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -875,7 +875,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: -8.96
       objectReference: {fileID: 0}
     - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -919,11 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: maxSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: backSpeed
-      value: 0.01
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: turnSpeed
@@ -931,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: forwardSpeed
-      value: 0.025
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1010,4 +1006,4 @@ SceneRoots:
   - {fileID: 436499819}
   - {fileID: 2649087702810914620}
   - {fileID: 1646988384}
-  - {fileID: 2003800004}
+  - {fileID: 1814720422}
