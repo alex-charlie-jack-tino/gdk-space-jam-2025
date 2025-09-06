@@ -18,4 +18,12 @@ public class BulletMovement : MonoBehaviour
     {
         transform.Translate(new Vector3(0, 1, 0));
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.layer == 6)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
