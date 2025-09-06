@@ -104,9 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5f85595a2ad649ab60118aa905886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  forwardSpeed: 0.25
-  backSpeed: 0.1
-  turnSpeed: 10
+  forwardSpeed: 5
+  backSpeed: 5
+  turnSpeed: 5
   weaponType: 0
   bullet: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
   dashType: 0
@@ -161,5 +161,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 100
   m_CollisionDetection: 0
