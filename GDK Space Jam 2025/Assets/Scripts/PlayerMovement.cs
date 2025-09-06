@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveInput;
     Vector3 movement;
+    Vector3 deltaVelocity;
     float currentSpeed;
     Vector3 rotation;
 
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //screen wrap
         if (transform.position.y > 14 || transform.position.y < -14)
         {
             Vector3 newLocation = new Vector3(transform.position.x, transform.position.y * -1, transform.position.z);
@@ -69,14 +71,20 @@ public class PlayerMovement : MonoBehaviour
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
         transform.Rotate(rotation);
+        if (movement.magnitude < 20){
+        movement += deltaVelocity;
+        }
         transform.Translate(movement, Space.World);
     }
 
     private void Move(InputAction.CallbackContext ctx)
     {
+        //read input
         moveInput = ctx.ReadValue<Vector2>();
+        //Forward or Backward
         var moveSpeed = moveInput.y > 0 ? forwardSpeed : backSpeed;
-        movement += transform.up*moveInput.y*moveSpeed;
+        //calculate new velocity vector to existing velocity
+        deltaVelocity = transform.up*moveInput.y*moveSpeed;
         /*
         if (movement.x > 0)
         {
@@ -87,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = backSpeed;
         }
         */
+        //add new rotation to existing rotation
         rotation += new Vector3(0, 0, moveInput.x * turnSpeed);
     }
 

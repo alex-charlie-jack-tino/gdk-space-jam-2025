@@ -403,6 +403,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestShip
       objectReference: {fileID: 0}
+    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+      propertyPath: backSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+      propertyPath: turnSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+      propertyPath: forwardSpeed
+      value: 0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
