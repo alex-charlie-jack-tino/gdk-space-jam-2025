@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public bool holdToFire;
     public float cooldownTime;
 
+    [SerializeField] float maxSpeed = 4f;
+    
     // Actions
     InputAction move;
     InputAction shoot;
@@ -24,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
     InputSystem_Actions inputActions;
 
     Vector2 moveInput;
-    Vector2 movement;
+    Vector3 movement;
+    Vector3 deltaVelocity;
     float currentSpeed;
     Vector3 rotation;
     bool onCooldown = false;
@@ -61,15 +64,33 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(movement * currentSpeed);
+        //screen wrap
+        if (transform.position.y > 14 || transform.position.y < -14)
+        {
+            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y * -1, transform.position.z);
+            transform.SetPositionAndRotation(newLocation, transform.rotation);
+        }
+        if (transform.position.x > 29 || transform.position.x < -29)
+        {
+            Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
+            transform.SetPositionAndRotation(newLocation, transform.rotation);
+        }
         transform.Rotate(rotation);
+        movement += deltaVelocity;
+        float clampedMovement = Mathf.Clamp(movement.magnitude, 0, maxSpeed);
+        movement = movement.normalized * clampedMovement;
+        transform.Translate(movement, Space.World);
     }
 
     private void Move(InputAction.CallbackContext ctx)
     {
+        //read input
         moveInput = ctx.ReadValue<Vector2>();
-        
-        movement = new Vector2(0, moveInput.y);
+        //Forward or Backward
+        var moveSpeed = moveInput.y > 0 ? forwardSpeed : backSpeed;
+        //calculate new velocity vector to existing velocity
+        deltaVelocity = transform.up*moveInput.y*moveSpeed;
+        /*
         if (movement.x > 0)
         {
             currentSpeed = forwardSpeed;
@@ -78,8 +99,9 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed = backSpeed;
         }
-
-        rotation = new Vector3(0, 0, moveInput.x * turnSpeed);
+        */
+        //add new rotation to existing rotation
+        rotation += new Vector3(0, 0, moveInput.x * turnSpeed);
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
