@@ -8,11 +8,11 @@ public class BulletMovement : MonoBehaviour
     public int bulletType;
     public int bounces;
 
-    Rigidbody2D rigidbody;
+    Rigidbody rigidbody;
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddRelativeForce(new Vector2(0,1) * bulletSpeed);
     }
 
