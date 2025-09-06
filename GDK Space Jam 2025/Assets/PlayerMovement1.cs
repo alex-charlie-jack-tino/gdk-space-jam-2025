@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     public int forwardSpeed;
     public int backSpeed;
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (keyboard.wKey.isPressed)
         {
+            
             Vector3 forward = new Vector3(forwardSpeed, 0, 0);
             controller.Move(forward);
         }
