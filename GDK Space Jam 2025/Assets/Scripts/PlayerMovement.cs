@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bullet;
     public int dashType;
     public bool holdToFire;
+    public float cooldownTime;
 
     // Actions
     InputAction move;
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     float currentSpeed;
     Vector3 rotation;
+    bool onCooldown = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -81,6 +84,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext ctx)
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        if (!onCooldown)
+        {
+            Instantiate(bullet, transform.position, transform.rotation);
+            if (cooldownTime != 0)
+                StartCoroutine("bulletCooldown");
+        }
+    }
+
+    IEnumerator bulletCooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(cooldownTime);
+        onCooldown = false;
     }
 }

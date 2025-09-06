@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletMovement
   bulletSpeed: 700
   bulletType: 0
-  bounces: 3
+  bounces: 2
 --- !u!50 &4338283605976305792
 Rigidbody2D:
   serializedVersion: 5
@@ -129,7 +129,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

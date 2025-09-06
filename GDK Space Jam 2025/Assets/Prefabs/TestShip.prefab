@@ -111,6 +111,7 @@ MonoBehaviour:
   bullet: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
   dashType: 0
   holdToFire: 0
+  cooldownTime: 0
 --- !u!70 &979028198545406435
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
