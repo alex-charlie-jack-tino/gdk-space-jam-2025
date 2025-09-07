@@ -8,12 +8,12 @@ public class BulletMovement : MonoBehaviour
     public int bulletType;
     public int bounces;
 
-    Rigidbody rigidbody;
+    Rigidbody rigidBody;
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddRelativeForce(new Vector2(0,1) * bulletSpeed);
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.AddRelativeForce(new Vector2(0,1) * bulletSpeed);
     }
 
     // Update is called once per frame

@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1047,6 +1051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestShip
       objectReference: {fileID: 0}
+    - target: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
       propertyPath: maxSpeed
       value: 0.15
@@ -1064,6 +1072,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+--- !u!1 &1842728860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
+  m_PrefabInstance: {fileID: 1814720422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2008155279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008155281}
+  - component: {fileID: 2008155280}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2008155280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008155279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d4e3a212b81354c800826d533da771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestSpawnScript
+  ship: {fileID: 1842728860}
+--- !u!4 &2008155281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008155279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.21, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2649087702810914620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1139,3 +1197,4 @@ SceneRoots:
   - {fileID: 1814720422}
   - {fileID: 1520242626}
   - {fileID: 744111802}
+  - {fileID: 2008155281}

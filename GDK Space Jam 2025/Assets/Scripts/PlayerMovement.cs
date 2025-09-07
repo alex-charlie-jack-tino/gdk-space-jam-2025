@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     float currentSpeed;
     Vector3 rotation;
     bool onCooldown = false;
-    Rigidbody rigidbody;
+    Rigidbody rigidBody;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         
-        rigidbody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -75,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
             Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
-        rigidbody.AddRelativeForce(movement);
-        rigidbody.AddRelativeTorque(rotation);
+        rigidBody.AddRelativeForce(movement);
+        rigidBody.AddRelativeTorque(rotation);
     }
 
     private void Move(InputAction.CallbackContext ctx)
