@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -115,7 +116,11 @@ public class PlayerMovement : MonoBehaviour
     {
         health--;
         if (health <= 0)
-            Destroy(this.gameObject);
+        {
+            StaticShipSelectHolder.winPlayer = _playerIndex == PlayerIndex.A ? 2 : 1;
+            SceneManager.LoadSceneAsync("WinScreen", LoadSceneMode.Single);
+            //StartCoroutine(EndGame());
+        }
             print("Player " + (_playerIndex == PlayerIndex.A ? "1" : "2") + " took damage! Health: " + health);
     }
 
@@ -125,4 +130,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
     }
+
+    /*IEnumerator EndGame()
+    {
+        SceneManager.LoadSceneAsync("WinScreen", LoadSceneMode.Single)
+    }*/
 }
