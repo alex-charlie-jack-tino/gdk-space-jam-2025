@@ -81,12 +81,24 @@ PrefabInstance:
       value: meteoroid0Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3692254488790982148, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692254488790982148, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971167515085457870, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3971167515085457870, guid: bc1e6fd6a14177f47bc9c614bf81311f, type: 3}
       propertyPath: m_StaticEditorFlags

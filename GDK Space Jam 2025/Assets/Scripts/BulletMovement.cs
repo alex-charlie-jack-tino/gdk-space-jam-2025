@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
+    private const int k_wallsLayer = 6;
+
     // Bullet Stats
     public float bulletSpeed;
     public int bulletType;
-    public int bounces;
+    public int remainingBounces;
 
     Rigidbody rigidBody;
 
@@ -21,24 +23,30 @@ public class BulletMovement : MonoBehaviour
         if (transform.position.z > Bounds.ArenaZRadius || transform.position.z < -Bounds.ArenaZRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            transform.SetPositionAndRotation(newLocation, transform.rotation);
+            transform.position = newLocation;
         }
         if (transform.position.x > Bounds.ArenaXRadius || transform.position.x < -Bounds.ArenaXRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
-            transform.SetPositionAndRotation(newLocation, transform.rotation);
+            transform.position = newLocation;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 6)
-        {
-            if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.tag == ("Player"))
+        //if (collision.gameObject.layer == k_wallsLayer)
+        //{
+        //    //if (gameObject.layer == collision.gameObject.layer && collision.gameObject.health)
+        //    //    collision.gameObject.health--;
+        //}
+        if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.tag == ("Player"))
                 collision.gameObject.SendMessage("TakeDamage");
-            if (bounces == 0)
-                Destroy(this.gameObject);
-            else
-                bounces--;
+        if (collision.gameObject.layer == k_wallsLayer)
+        {
+            remainingBounces--;
+
+            if (remainingBounces == 0)
+                Destroy(gameObject);
         }
     }
 }
