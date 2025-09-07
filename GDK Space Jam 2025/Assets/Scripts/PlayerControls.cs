@@ -42,7 +42,7 @@ public class PlayerControls : MonoBehaviour
                 return;
         }
 
-        pMovement.InitControls(move, shoot);
+        pMovement.InitControls(move, shoot, playerIndex);
 
         print($"{playerIndex} initialized");
     }

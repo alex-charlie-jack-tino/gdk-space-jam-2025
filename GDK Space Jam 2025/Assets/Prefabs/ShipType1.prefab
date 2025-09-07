@@ -60,9 +60,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5760d6f3dace21548a50aa7340a397c3, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5760d6f3dace21548a50aa7340a397c3, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5760d6f3dace21548a50aa7340a397c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
       propertyPath: m_Name
       value: ShipType1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58801aaf67ea0674d89f5204194c8b07, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -98,25 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08569eb529fad0f418c7d414bfa3b51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  playerNum: 0
-  move:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: dbd29057-e398-41f9-8ef2-e848a5a0635e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  shoot:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 849dbb82-81ff-47a2-80d8-34296f1d7464
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!114 &7785167509450925351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +134,12 @@ MonoBehaviour:
   backSpeed: 5
   turnSpeed: 5
   weaponType: 0
-  bullet: {fileID: 0}
+  bulletP1: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
+  bulletP2: {fileID: 7000914158213203770, guid: 7dc3f27de45f5814382c896341e5d5a6, type: 3}
   dashType: 0
   holdToFire: 0
-  cooldownTime: 0
-  maxSpeed: 4
+  cooldownTime: 0.1
+  _maxSpeed: 4
   playerControls: {fileID: 5692338707001051946}
 --- !u!54 &4173233080031655888
 Rigidbody:
