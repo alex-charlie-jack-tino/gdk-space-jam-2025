@@ -57,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         _move.canceled += Move;
         _shoot.performed += Shoot;
 
+        print($"Initialized. move={_move}, shoot={_shoot}");
+
         //if (weaponType == 4)
         //{
         //    _shoot.canceled += Shoot;
@@ -84,6 +86,10 @@ public class PlayerMovement : MonoBehaviour
     {
         //read input
         moveInput = ctx.ReadValue<Vector2>();
+
+
+        print($"move: {moveInput}");
+
         //Forward or Backward
         var moveSpeed = moveInput.y > 0 ? forwardSpeed : backSpeed;
 
@@ -96,13 +102,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext ctx)
     {
+        print("shoot");
+
         if (!onCooldown)
         {
             GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
-            newBullet.layer = 9 - playerControls.playerNum;
+            //newBullet.layer = 9 - playerControls.playerNum;
 
             if (cooldownTime != 0)
-                StartCoroutine("bulletCooldown");
+                StartCoroutine(BulletCooldown());
         }
     }
 

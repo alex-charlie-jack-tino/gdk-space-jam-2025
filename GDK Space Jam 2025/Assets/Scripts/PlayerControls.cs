@@ -1,37 +1,49 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum PlayerIndex
+{
+    A,
+    B
+}
+
 public class PlayerControls : MonoBehaviour
 {
-    public int playerNum;
-
     private InputSystem_Actions _actions;
 
     private void Awake()
     {
         _actions = new();
+        _actions.Enable();
+        _actions.Player.Enable();
     }
 
-    public void SetUp()
+    public void Initialize(PlayerIndex playerIndex)
     {
         InputAction move;
         InputAction shoot;
 
-        if (playerNum == 1)
+        PlayerMovement pMovement = GetComponent<PlayerMovement>();
+
+        switch (playerIndex)
         {
-            move = _actions.Player.MoveP1;
-            shoot = _actions.Player.AttackP1;
-            gameObject.layer = 7;
-            PlayerMovement pMovement = GetComponent<PlayerMovement>();
-            pMovement.InitControls(move, shoot);
+            case PlayerIndex.A:
+                move = _actions.Player.MoveP1;
+                shoot = _actions.Player.AttackP1;
+                gameObject.layer = 7;
+                break;
+            case PlayerIndex.B:
+                move = _actions.Player.MoveP2;
+                shoot = _actions.Player.AttackP2;
+                gameObject.layer = 8;
+                break;
+            default:
+                Debug.LogError("No such player index, only use A or B", this);
+                return;
         }
-        else if (playerNum == 2)
-        {
-            move = _actions.Player.MoveP2;
-            shoot = _actions.Player.AttackP2;
-            gameObject.layer = 8;
-            PlayerMovement pMovement = GetComponent<PlayerMovement>();
-            pMovement.InitControls(move, shoot);
-        }
+
+        pMovement.InitControls(move, shoot);
+
+        print($"{playerIndex} initialized");
     }
 }

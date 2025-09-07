@@ -8,7 +8,6 @@ public class TestSpawnScript : MonoBehaviour
     {
         GameObject newShip = Instantiate(ship, transform);
         PlayerControls shipScript = newShip.GetComponent<PlayerControls>();
-        shipScript.playerNum = 1;
-        shipScript.SetUp();
+        shipScript.Initialize(PlayerIndex.A);
     }
 }

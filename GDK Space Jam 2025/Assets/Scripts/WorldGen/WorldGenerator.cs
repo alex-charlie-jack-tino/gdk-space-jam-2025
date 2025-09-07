@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WorldGenerator : MonoBehaviour
 {
+    [Header("World")]
     [SerializeField] private GameObject[] _srcPrefabs;
     [SerializeField] private Transform _mapContainer;
     [SerializeField] private Vector2 _mapDimensions;
@@ -12,7 +13,9 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField] private float _perlinNoiseThreshold = 0.5f;
     [SerializeField] private float _perlinNoiseScale = 1;
 
+    [Header("Player Spawning")]
     private List<Vector2> _emptyGridCells;
+    [SerializeField] private GameObject _playerSrcPrefab;
 
     private void Start()
     {
@@ -41,7 +44,9 @@ public class WorldGenerator : MonoBehaviour
                 }
             }
         }
+        // Player coordinates
         Vector2 coordP1 = _emptyGridCells[0];
+        // Algorithm for finding furthest empty cell iteratively
         int currFurthestIndex = 0;
         float currGreatestDist = 0;
         for (int i = _emptyGridCells.Count - 1; i >= 0; i--)
@@ -54,7 +59,11 @@ public class WorldGenerator : MonoBehaviour
             }
         }
         Vector2 coordP2 = _emptyGridCells[currFurthestIndex];
+        Vector3 coordP1Remap = new(coordP1.x, 0, coordP1.y);
+        Vector3 coordP2Remap = new(coordP2.x, 0, coordP2.y);
 
-        // Instantiate P1 @ first coord, Instantiate P2 @ second coord
+        // Player instantiation and initialization
+        Instantiate(_playerSrcPrefab, coordP1Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.A);
+        Instantiate(_playerSrcPrefab, coordP2Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.B);
     }
 }
