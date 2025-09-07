@@ -36,6 +36,8 @@ public class BulletMovement : MonoBehaviour
     {
        if (collision.gameObject.layer == 6)
         {
+            if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.health)
+                collision.gameObject.health--;
             if (bounces == 0)
                 Destroy(this.gameObject);
             else

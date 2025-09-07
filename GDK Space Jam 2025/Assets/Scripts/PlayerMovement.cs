@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public int dashType;
     public bool holdToFire;
     public float cooldownTime;
+    [SerializeField] int health = 3;
 
     [SerializeField] private float _maxSpeed = 4f;
 
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         //screen wrap
         if (transform.position.z > 15 || transform.position.z < -15)
         {
-            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z*-1 + (transform.position.z < 0 ? -1 : 1));
+            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z * -1 + (transform.position.z < 0 ? -1 : 1));
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
         if (transform.position.x > 25 || transform.position.x < -25)
@@ -81,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
         }
         rigidBody.AddRelativeForce(movement);
         rigidBody.AddRelativeTorque(rotation);
+        if (health <= 0)
+            Destroy(this.gameObject);
     }
 
     private void Move(InputAction.CallbackContext ctx)
