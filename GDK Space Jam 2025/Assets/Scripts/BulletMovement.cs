@@ -41,6 +41,7 @@ public class BulletMovement : MonoBehaviour
         //}
         if (collision.gameObject.tag == ("Player"))
                 collision.gameObject.SendMessage("TakeDamage");
+                Destroy(gameObject);
         if (collision.gameObject.layer == k_wallsLayer)
         {
             remainingBounces--;

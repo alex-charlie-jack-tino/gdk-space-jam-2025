@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipType2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15a533ffb7c21fe4c93e943602fbc851, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98,25 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08569eb529fad0f418c7d414bfa3b51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  playerNum: 0
-  move:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 95311c77-a456-40d1-862a-1c61425051b7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  shoot:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8aece13d-264c-4afa-b9b8-b59b0a84f0b2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!114 &-5369830067587471275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +118,13 @@ MonoBehaviour:
   backSpeed: 5
   turnSpeed: 5
   weaponType: 0
-  bullet: {fileID: 0}
+  bulletP1: {fileID: 0}
+  bulletP2: {fileID: 0}
   dashType: 0
   holdToFire: 0
   cooldownTime: 0
-  maxSpeed: 4
+  health: 3
+  _maxSpeed: 4
   playerControls: {fileID: -9061683258842931569}
 --- !u!54 &4508071934505254851
 Rigidbody:
