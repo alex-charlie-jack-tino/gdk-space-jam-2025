@@ -69,12 +69,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //screen wrap
-        if (transform.position.z > 15 || transform.position.z < -15)
+        if (transform.position.z > Bounds.ArenaZRadius || transform.position.z < -Bounds.ArenaZRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z*-1 + (transform.position.z < 0 ? -1 : 1));
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
-        if (transform.position.x > 25 || transform.position.x < -25)
+        if (transform.position.x > Bounds.ArenaXRadius || transform.position.x < -Bounds.ArenaXRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x * -1 + (transform.position.x < 0 ? -1 : 1), transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
