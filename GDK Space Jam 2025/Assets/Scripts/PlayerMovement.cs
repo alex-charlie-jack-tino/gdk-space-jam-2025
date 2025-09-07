@@ -4,12 +4,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private PlayerIndex _playerIndex;
+    public static int P1CollisionLayer => 7;
+    public static int P2CollisionLayer => 8;
+
     // Player Stats
     public float forwardSpeed;
     public float backSpeed;
     public float turnSpeed;
     public int weaponType;
-    public GameObject bullet;
+    public GameObject bulletP1, bulletP2;
     public int dashType;
     public bool holdToFire;
     public float cooldownTime;
@@ -36,11 +40,6 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
-    {
-
-    }
-
     private void OnDisable()
     {
         _move.performed -= Move;
@@ -48,8 +47,10 @@ public class PlayerMovement : MonoBehaviour
         _shoot.performed -= Shoot;
     }
 
-    public void InitControls(InputAction newMove, InputAction newShoot)
+    public void InitControls(InputAction newMove, InputAction newShoot, PlayerIndex index)
     {
+        _playerIndex = index;
+
         _move = newMove;
         _shoot = newShoot;
 
@@ -106,8 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!onCooldown)
         {
-            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
-            //newBullet.layer = 9 - playerControls.playerNum;
+            GameObject newBullet = Instantiate(_playerIndex == PlayerIndex.A ? bulletP1 : bulletP2, transform.position, transform.rotation);
 
             if (cooldownTime != 0)
                 StartCoroutine(BulletCooldown());
