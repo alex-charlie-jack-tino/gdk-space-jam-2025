@@ -111,6 +111,10 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(BulletCooldown());
         }
     }
+    void TakeDamage()
+    {
+        health--;
+    }
 
     IEnumerator BulletCooldown()
     {

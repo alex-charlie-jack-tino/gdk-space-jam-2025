@@ -39,7 +39,8 @@ public class BulletMovement : MonoBehaviour
         //    //if (gameObject.layer == collision.gameObject.layer && collision.gameObject.health)
         //    //    collision.gameObject.health--;
         //}
-
+        if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.tag == ("Player"))
+                collision.gameObject.SendMessage("TakeDamage");
         if (collision.gameObject.layer == k_wallsLayer)
         {
             remainingBounces--;
