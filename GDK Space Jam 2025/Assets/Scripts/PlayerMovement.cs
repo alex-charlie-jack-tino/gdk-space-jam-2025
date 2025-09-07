@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         movement = new Vector3(0, moveInput.y * moveSpeed, 0);
 
         //add new rotation to existing rotation
-        rotation = new Vector3(moveInput.x * turnSpeed, 0, 0);
+        rotation = new Vector3(0, 0, moveInput.x * turnSpeed);
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
