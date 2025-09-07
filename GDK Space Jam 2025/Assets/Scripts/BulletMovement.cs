@@ -34,14 +34,12 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.layer == k_wallsLayer)
-        //{
-        //    //if (gameObject.layer == collision.gameObject.layer && collision.gameObject.health)
-        //    //    collision.gameObject.health--;
-        //}
-        if (collision.gameObject.tag == ("Player"))
-                collision.gameObject.SendMessage("TakeDamage");
-                Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.SendMessage("TakeDamage");
+            Destroy(gameObject);
+        }
+                
         if (collision.gameObject.layer == k_wallsLayer)
         {
             remainingBounces--;

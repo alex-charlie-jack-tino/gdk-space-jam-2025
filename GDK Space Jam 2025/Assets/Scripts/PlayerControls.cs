@@ -14,7 +14,6 @@ public class PlayerControls : MonoBehaviour
     private void Awake()
     {
         _actions = new();
-        _actions.Enable();
         _actions.Player.Enable();
     }
 
@@ -43,7 +42,10 @@ public class PlayerControls : MonoBehaviour
         }
 
         pMovement.InitControls(move, shoot, playerIndex);
+    }
 
-        print($"{playerIndex} initialized");
+    private void OnDisable()
+    {
+        _actions.Player.Disable();
     }
 }
