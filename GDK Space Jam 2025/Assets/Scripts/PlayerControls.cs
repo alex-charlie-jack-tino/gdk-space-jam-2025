@@ -47,5 +47,6 @@ public class PlayerControls : MonoBehaviour
     private void OnDisable()
     {
         _actions.Player.Disable();
+        _actions.Disable();
     }
 }

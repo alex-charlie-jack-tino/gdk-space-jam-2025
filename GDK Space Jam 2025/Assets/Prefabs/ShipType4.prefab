@@ -114,18 +114,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5f85595a2ad649ab60118aa905886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  forwardSpeed: 5
+  forwardSpeed: 10
   backSpeed: 5
   turnSpeed: 5
   weaponType: 0
-  bulletP1: {fileID: 0}
-  bulletP2: {fileID: 0}
+  bulletP1: {fileID: 7000914158213203770, guid: e3cbd62b21366144fa9a2e3ef0b1bf10, type: 3}
+  bulletP2: {fileID: 7000914158213203770, guid: 7dc3f27de45f5814382c896341e5d5a6, type: 3}
   dashType: 0
   holdToFire: 0
-  cooldownTime: 0
+  cooldownTime: 0.1
   health: 3
   _maxSpeed: 4
-  playerControls: {fileID: -8178845484591274837}
+  playerControls: {fileID: 5692338707001051946, guid: 4baeed2a982a0c744860c5211eb1d9d3, type: 3}
 --- !u!54 &-7963022704731158671
 Rigidbody:
   m_ObjectHideFlags: 0

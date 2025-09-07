@@ -63,7 +63,7 @@ public class WorldGenerator : MonoBehaviour
         Vector3 coordP2Remap = new(coordP2.x, 0, coordP2.y);
 
         // Player instantiation and initialization
-        Instantiate(_playerSrcPrefab, coordP1Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.A);
-        Instantiate(_playerSrcPrefab, coordP2Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.B);
+        Instantiate(StaticShipSelectHolder.p1Prefab, coordP1Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.A);
+        Instantiate(StaticShipSelectHolder.p2Prefab, coordP2Remap, _playerSrcPrefab.transform.rotation).GetComponent<PlayerControls>().Initialize(PlayerIndex.B);
     }
 }

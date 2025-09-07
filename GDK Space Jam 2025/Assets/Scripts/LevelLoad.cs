@@ -11,6 +11,11 @@ public class LevelLoad : MonoBehaviour
         StartCoroutine(LoadRoutine());
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator LoadRoutine()
     {
         AsyncOperation sceneLoadOp = SceneManager.LoadSceneAsync(_targetLevelName, LoadSceneMode.Single);
