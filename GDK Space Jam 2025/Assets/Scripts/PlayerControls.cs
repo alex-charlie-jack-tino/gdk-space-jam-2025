@@ -12,15 +12,19 @@ public class PlayerControls : MonoBehaviour
     {
         if (playerNum == 1)
         {
-            move = InputSystem.actions.FindAction("Move");
-            shoot = InputSystem.actions.FindAction("Attack");
+            move = InputSystem.actions.FindAction("MoveP1");
+            shoot = InputSystem.actions.FindAction("AttackP1");
             this.gameObject.layer = 7;
             PlayerMovement pMovement = GetComponent<PlayerMovement>();
             pMovement.setControls(move, shoot);
         }
         else if (playerNum == 2)
         {
-            Debug.Log("oh no this should not be happening");
+            move = InputSystem.actions.FindAction("MoveP2");
+            shoot = InputSystem.actions.FindAction("AttackP2");
+            this.gameObject.layer = 8;
+            PlayerMovement pMovement = GetComponent<PlayerMovement>();
+            pMovement.setControls(move, shoot);
         }
     }
 }

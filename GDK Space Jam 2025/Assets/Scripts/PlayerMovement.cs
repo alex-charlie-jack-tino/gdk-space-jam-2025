@@ -98,7 +98,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!onCooldown)
         {
-            Instantiate(bullet, transform.position, transform.rotation);
+            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
+            newBullet.layer = 9 - playerControls.playerNum;
+
             if (cooldownTime != 0)
                 StartCoroutine("bulletCooldown");
         }
