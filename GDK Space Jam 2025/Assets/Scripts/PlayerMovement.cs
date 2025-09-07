@@ -71,12 +71,12 @@ public class PlayerMovement : MonoBehaviour
         //screen wrap
         if (transform.position.z > 15 || transform.position.z < -15)
         {
-            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z*-1);
+            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z*-1 + (transform.position.z < 0 ? -1 : 1));
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
         if (transform.position.x > 25 || transform.position.x < -25)
         {
-            Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
+            Vector3 newLocation = new Vector3(transform.position.x * -1 + (transform.position.x < 0 ? -1 : 1), transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
         rigidBody.AddRelativeForce(movement);
