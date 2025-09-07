@@ -33,7 +33,7 @@ public class WorldGenerator : MonoBehaviour
         {
             for (int x = 0; x < _mapDimensions.x; x++)
             {
-                float currPerlinValue = Mathf.PerlinNoise((float)(x * _perlinNoiseScale), (float)(y * _perlinNoiseScale));
+                float currPerlinValue = Mathf.PerlinNoise((float)((x + Random.Range(-2.1f, 2.1f)) * _perlinNoiseScale), (float)(y * _perlinNoiseScale));
                 if (currPerlinValue < _perlinNoiseThreshold)
                 {
                     Instantiate(ChooseRandPrefab(ref _srcPrefabs), new Vector3(x - _mapXHalf, 0, y - _mapYHalf), Quaternion.identity, _mapContainer);
