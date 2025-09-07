@@ -29,17 +29,16 @@ public class BulletMovement : MonoBehaviour
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6)
         {
-            if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.health)
-                collision.gameObject.health--;
+            if (this.gameObject.layer == collision.gameObject.layer && collision.gameObject.tag == ("Player"))
+                collision.gameObject.SendMessage("TakeDamage");
             if (bounces == 0)
                 Destroy(this.gameObject);
-           else
+            else
                 bounces--;
-       }
+        }
     }
 }
