@@ -999,84 +999,6 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!1001 &1814720422
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295936130724555954, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_Name
-      value: TestShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: maxSpeed
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: turnSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7759872968604536369, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-      propertyPath: forwardSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
---- !u!1 &1842728860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
-  m_PrefabInstance: {fileID: 1814720422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008155279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d4e3a212b81354c800826d533da771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestSpawnScript
-  ship: {fileID: 1842728860}
+  ship: {fileID: 5815456075076439937, guid: 67b5df2801b923d4fbcf5f05680104ba, type: 3}
 --- !u!4 &2008155281
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,7 +1116,6 @@ SceneRoots:
   - {fileID: 436499819}
   - {fileID: 2649087702810914620}
   - {fileID: 1646988384}
-  - {fileID: 1814720422}
   - {fileID: 1520242626}
   - {fileID: 744111802}
   - {fileID: 2008155281}

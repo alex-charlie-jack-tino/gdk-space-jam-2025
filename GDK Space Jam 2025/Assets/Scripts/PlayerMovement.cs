@@ -1,9 +1,6 @@
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,15 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public bool holdToFire;
     public float cooldownTime;
 
-    [SerializeField] float maxSpeed = 4f;
+    [SerializeField] private float _maxSpeed = 4f;
 
     public PlayerControls playerControls;
     
     // Actions
-    InputAction move;
-    InputAction shoot;
-
-    InputSystem_Actions inputActions;
+    private InputAction _move;
+    private InputAction _shoot;
 
     Vector2 moveInput;
     Vector3 movement;
@@ -36,16 +31,8 @@ public class PlayerMovement : MonoBehaviour
     bool onCooldown = false;
     Rigidbody rigidBody;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     private void Awake()
     {
-
-        
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -56,12 +43,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        move.performed -= Move;
-        move.canceled -= Move;
-        shoot.performed -= Shoot;
+        _move.performed -= Move;
+        _move.canceled -= Move;
+        _shoot.performed -= Shoot;
     }
 
-    // Update is called once per frame
+    public void InitControls(InputAction newMove, InputAction newShoot)
+    {
+        _move = newMove;
+        _shoot = newShoot;
+
+        _move.performed += Move;
+        _move.canceled += Move;
+        _shoot.performed += Shoot;
+
+        //if (weaponType == 4)
+        //{
+        //    _shoot.canceled += Shoot;
+        //}
+    }
+
     void FixedUpdate()
     {
         //screen wrap
@@ -81,13 +82,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(InputAction.CallbackContext ctx)
     {
-        
         //read input
         moveInput = ctx.ReadValue<Vector2>();
         //Forward or Backward
         var moveSpeed = moveInput.y > 0 ? forwardSpeed : backSpeed;
 
-        // Calulate force to add to ship
+        // Calculate force to add to ship
         movement = new Vector3(0, moveInput.y * moveSpeed, 0);
 
         //add new rotation to existing rotation
@@ -106,25 +106,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator bulletCooldown()
+    IEnumerator BulletCooldown()
     {
         onCooldown = true;
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
-    }
-
-    public void setControls(InputAction newMove, InputAction newShoot)
-    {
-        move = newMove;
-        shoot = newShoot;
-
-        move.performed += Move;
-        move.canceled += Move;
-        shoot.performed += Shoot;
-
-        if (weaponType == 4)
-        {
-            shoot.canceled += Shoot;
-        }
     }
 }
