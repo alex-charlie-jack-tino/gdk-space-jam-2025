@@ -91,9 +91,6 @@ public class PlayerMovement : MonoBehaviour
         //read input
         moveInput = ctx.ReadValue<Vector2>();
 
-
-        print($"move: {moveInput}");
-
         //Forward or Backward
         var moveSpeed = moveInput.y > 0 ? forwardSpeed : backSpeed;
 
@@ -106,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext ctx)
     {
-        print("shoot");
-
         if (!onCooldown)
         {
             GameObject newBullet = Instantiate(_playerIndex == PlayerIndex.A ? bulletP1 : bulletP2, transform.position, transform.rotation);
