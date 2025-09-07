@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public float cooldownTime;
 
     [SerializeField] float maxSpeed = 4f;
+
+    public PlayerControls playerControls;
     
     // Actions
     InputAction move;
@@ -42,22 +44,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        move = InputSystem.actions.FindAction("Move");
-        shoot = InputSystem.actions.FindAction("Attack");
+
         
         rigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
     {
-        move.performed += Move;
-        move.canceled += Move;
-        shoot.performed += Shoot;
 
-        if (weaponType == 4)
-        {
-            shoot.canceled += Shoot;
-        }
     }
 
     private void OnDisable()
@@ -115,5 +109,20 @@ public class PlayerMovement : MonoBehaviour
         onCooldown = true;
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
+    }
+
+    public void setControls(InputAction newMove, InputAction newShoot)
+    {
+        move = newMove;
+        shoot = newShoot;
+
+        move.performed += Move;
+        move.canceled += Move;
+        shoot.performed += Shoot;
+
+        if (weaponType == 4)
+        {
+            shoot.canceled += Shoot;
+        }
     }
 }

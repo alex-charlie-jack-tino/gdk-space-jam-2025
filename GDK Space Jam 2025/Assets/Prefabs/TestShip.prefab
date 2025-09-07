@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7759872968604536369}
   - component: {fileID: -5683504126660640249}
   - component: {fileID: -699929972606152336}
+  - component: {fileID: -6355441953698595254}
   m_Layer: 7
   m_Name: TestShip
   m_TagString: Untagged
@@ -113,6 +114,7 @@ MonoBehaviour:
   holdToFire: 0
   cooldownTime: 0
   maxSpeed: 3
+  playerControls: {fileID: -6355441953698595254}
 --- !u!136 &-5683504126660640249
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -163,3 +165,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 100
   m_CollisionDetection: 0
+--- !u!114 &-6355441953698595254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815456075076439937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08569eb529fad0f418c7d414bfa3b51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
+  playerNum: 0
+  move:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d052b2b8-f38e-45d1-bde4-8e1da9f08f6c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  shoot:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 39c02fec-c4ff-4002-b407-7a8541e975fd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
