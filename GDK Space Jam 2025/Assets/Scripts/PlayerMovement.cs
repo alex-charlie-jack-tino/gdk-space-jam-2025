@@ -114,6 +114,9 @@ public class PlayerMovement : MonoBehaviour
     void TakeDamage()
     {
         health--;
+        if (health <= 0)
+            Destroy(this.gameObject);
+            print("Player " + (_playerIndex == PlayerIndex.A ? "1" : "2") + " took damage! Health: " + health);
     }
 
     IEnumerator BulletCooldown()
