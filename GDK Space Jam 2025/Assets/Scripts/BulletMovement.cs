@@ -19,7 +19,7 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(new Vector3(0, 1, 0));
+        //transform.Translate(new Vector3(0, 1, 0));
         if (transform.position.y > 14 || transform.position.y < -14)
         {
             Vector3 newLocation = new Vector3(transform.position.x, transform.position.y * -1, transform.position.z);

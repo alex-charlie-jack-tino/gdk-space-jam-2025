@@ -93,7 +93,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""MoveP1"",
                     ""type"": ""Value"",
                     ""id"": ""351f2ccd-1f9f-44bf-9bec-d62ac5c5f408"",
                     ""expectedControlType"": ""Vector2"",
@@ -102,46 +102,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
+                    ""name"": ""MoveP2"",
                     ""type"": ""Value"",
-                    ""id"": ""6b444451-8a00-4d00-a97e-f47457f736a8"",
+                    ""id"": ""1da9a0cc-3a69-4259-ac28-b7ac88a9584d"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""AttackP1"",
+                    ""type"": ""Button"",
+                    ""id"": ""795cc86f-5f13-4901-8b23-f3b5a2e7535e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackP2"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Hold"",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""27c5f898-bc57-4ee1-8800-db469aca5fe3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -150,7 +132,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Previous"",
                     ""type"": ""Button"",
                     ""id"": ""2776c80d-3c14-4091-8c56-d04ced07a2b0"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -159,16 +141,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Next"",
                     ""type"": ""Button"",
                     ""id"": ""b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Sprint"",
-                    ""type"": ""Button"",
-                    ""id"": ""641cd816-40e6-41b4-8c3d-04687c349290"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -176,24 +149,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""978bfe49-cc26-4a3d-ab7b-7d7a29327403"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""WASD"",
                     ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
                     ""path"": ""Dpad"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveP1"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -204,18 +166,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -226,18 +177,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -248,18 +188,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -270,139 +199,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<XRController>/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3ea4d645-4504-4529-b061-ab81934c3752"",
-                    ""path"": ""<Joystick>/stick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8c8e490b-c610-4785-884f-f04217b23ca4"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b3c1c7f0-bd20-4ee7-a0f1-899b24bca6d7"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Attack"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""AttackP2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -430,72 +238,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f2e9ba44-c423-42a7-ad56-f20975884794"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8cbb2f4b-a784-49cc-8d5e-c010b8c7f4e6"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d8bf24bf-3f2f-4160-a97c-38ec1eb520ba"",
-                    ""path"": ""<XRController>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eb40bb66-4559-4dfa-9a2f-820438abb426"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""daba33a1-ad0c-4742-a909-43ad1cdfbeb6"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""603f3daf-40bd-4854-8724-93e8017f59e3"",
-                    ""path"": ""<XRController>/secondaryButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1534dc16-a6aa-499d-9c3a-22b47347b52a"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
@@ -517,46 +259,68 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""1c04ea5f-b012-41d1-a6f7-02e963b52893"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""7932cb87-81e3-4791-9769-f090b4805286"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
+                    ""groups"": """",
+                    ""action"": ""MoveP2"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""b3f66d0b-7751-423f-908b-a11c5bd95930"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""name"": ""up"",
+                    ""id"": ""236272bd-b3b7-449b-91b3-8d700c033c80"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Interact"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveP2"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7e6a92ce-bf3f-4020-a0e2-0690f63e4a9e"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveP2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""91d4d661-1370-4bd3-86e0-73712c53c119"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveP2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1dbc7133-bd17-45e1-8c20-6923d9a9349e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveP2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4f4649ac-64a8-4a73-af11-b3faef356a4d"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""5255d4ec-3f0d-43f9-b739-7c239072f33c"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""36e52cba-0905-478e-a818-f4bfcb9f3b9a"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Crouch"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""AttackP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1144,15 +908,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_MoveP1 = m_Player.FindAction("MoveP1", throwIfNotFound: true);
+        m_Player_MoveP2 = m_Player.FindAction("MoveP2", throwIfNotFound: true);
+        m_Player_AttackP1 = m_Player.FindAction("AttackP1", throwIfNotFound: true);
+        m_Player_AttackP2 = m_Player.FindAction("AttackP2", throwIfNotFound: true);
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
-        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1246,15 +1007,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Crouch;
-    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_MoveP1;
+    private readonly InputAction m_Player_MoveP2;
+    private readonly InputAction m_Player_AttackP1;
+    private readonly InputAction m_Player_AttackP2;
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
-    private readonly InputAction m_Player_Sprint;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1267,29 +1025,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public PlayerActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Player/Move".
+        /// Provides access to the underlying input action "Player/MoveP1".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @MoveP1 => m_Wrapper.m_Player_MoveP1;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Look".
+        /// Provides access to the underlying input action "Player/MoveP2".
         /// </summary>
-        public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @MoveP2 => m_Wrapper.m_Player_MoveP2;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Attack".
+        /// Provides access to the underlying input action "Player/AttackP1".
         /// </summary>
-        public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @AttackP1 => m_Wrapper.m_Player_AttackP1;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Interact".
+        /// Provides access to the underlying input action "Player/AttackP2".
         /// </summary>
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Crouch".
-        /// </summary>
-        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Jump".
-        /// </summary>
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @AttackP2 => m_Wrapper.m_Player_AttackP2;
         /// <summary>
         /// Provides access to the underlying input action "Player/Previous".
         /// </summary>
@@ -1298,10 +1048,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Next".
         /// </summary>
         public InputAction @Next => m_Wrapper.m_Player_Next;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Sprint".
-        /// </summary>
-        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1328,33 +1074,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
-            @Look.started += instance.OnLook;
-            @Look.performed += instance.OnLook;
-            @Look.canceled += instance.OnLook;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @MoveP1.started += instance.OnMoveP1;
+            @MoveP1.performed += instance.OnMoveP1;
+            @MoveP1.canceled += instance.OnMoveP1;
+            @MoveP2.started += instance.OnMoveP2;
+            @MoveP2.performed += instance.OnMoveP2;
+            @MoveP2.canceled += instance.OnMoveP2;
+            @AttackP1.started += instance.OnAttackP1;
+            @AttackP1.performed += instance.OnAttackP1;
+            @AttackP1.canceled += instance.OnAttackP1;
+            @AttackP2.started += instance.OnAttackP2;
+            @AttackP2.performed += instance.OnAttackP2;
+            @AttackP2.canceled += instance.OnAttackP2;
             @Previous.started += instance.OnPrevious;
             @Previous.performed += instance.OnPrevious;
             @Previous.canceled += instance.OnPrevious;
             @Next.started += instance.OnNext;
             @Next.performed += instance.OnNext;
             @Next.canceled += instance.OnNext;
-            @Sprint.started += instance.OnSprint;
-            @Sprint.performed += instance.OnSprint;
-            @Sprint.canceled += instance.OnSprint;
         }
 
         /// <summary>
@@ -1366,33 +1103,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="PlayerActions" />
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
-            @Look.started -= instance.OnLook;
-            @Look.performed -= instance.OnLook;
-            @Look.canceled -= instance.OnLook;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @MoveP1.started -= instance.OnMoveP1;
+            @MoveP1.performed -= instance.OnMoveP1;
+            @MoveP1.canceled -= instance.OnMoveP1;
+            @MoveP2.started -= instance.OnMoveP2;
+            @MoveP2.performed -= instance.OnMoveP2;
+            @MoveP2.canceled -= instance.OnMoveP2;
+            @AttackP1.started -= instance.OnAttackP1;
+            @AttackP1.performed -= instance.OnAttackP1;
+            @AttackP1.canceled -= instance.OnAttackP1;
+            @AttackP2.started -= instance.OnAttackP2;
+            @AttackP2.performed -= instance.OnAttackP2;
+            @AttackP2.canceled -= instance.OnAttackP2;
             @Previous.started -= instance.OnPrevious;
             @Previous.performed -= instance.OnPrevious;
             @Previous.canceled -= instance.OnPrevious;
             @Next.started -= instance.OnNext;
             @Next.performed -= instance.OnNext;
             @Next.canceled -= instance.OnNext;
-            @Sprint.started -= instance.OnSprint;
-            @Sprint.performed -= instance.OnSprint;
-            @Sprint.canceled -= instance.OnSprint;
         }
 
         /// <summary>
@@ -1694,47 +1422,33 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "MoveP1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMove(InputAction.CallbackContext context);
+        void OnMoveP1(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Look" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "MoveP2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnLook(InputAction.CallbackContext context);
+        void OnMoveP2(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "AttackP1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAttack(InputAction.CallbackContext context);
+        void OnAttackP1(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "AttackP2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Crouch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnCrouch(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnJump(InputAction.CallbackContext context);
+        void OnAttackP2(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Previous" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1749,13 +1463,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnNext(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSprint(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
