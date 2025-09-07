@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShipSelectControl : MonoBehaviour
@@ -26,6 +28,7 @@ public class ShipSelectControl : MonoBehaviour
     private bool p2CanInput = true;
 
     public GameObject[] prefabs;
+
     private void Awake()
     {
         _actions = new();
@@ -58,6 +61,10 @@ public class ShipSelectControl : MonoBehaviour
         moveP2.performed -= movep2;
         selectP1.performed -= selectp1;
         selectP2.performed -= selectp2;
+
+
+        _actions.Player.Disable();
+        _actions.Disable();
     }
 
     private void movep1(InputAction.CallbackContext ctx)
@@ -140,7 +147,20 @@ public class ShipSelectControl : MonoBehaviour
     {
         if (!p2CanInput && !p1CanInput)
         {
-            Debug.Log("CODE TO LOAD PLAY SCENE GOES HERE");
+            StartCoroutine(LoadRoutine());
+        }
+    }
+
+    
+
+    private IEnumerator LoadRoutine()
+    {
+        AsyncOperation sceneLoadOp = SceneManager.LoadSceneAsync("JackTestScene", LoadSceneMode.Single);
+
+        while (!sceneLoadOp.isDone)
+        {
+            print(sceneLoadOp.progress);
+            yield return null;
         }
     }
 }
