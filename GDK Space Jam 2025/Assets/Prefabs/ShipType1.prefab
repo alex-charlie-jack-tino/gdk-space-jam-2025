@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5f85595a2ad649ab60118aa905886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  forwardSpeed: 5
+  forwardSpeed: 10
   backSpeed: 5
   turnSpeed: 5
   weaponType: 0

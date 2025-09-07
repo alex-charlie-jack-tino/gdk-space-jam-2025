@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class BulletMovement : MonoBehaviour
 {
@@ -16,16 +15,15 @@ public class BulletMovement : MonoBehaviour
         rigidBody.AddRelativeForce(new Vector2(0,1) * bulletSpeed);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         //transform.Translate(new Vector3(0, 1, 0));
-        if (transform.position.z > 15 || transform.position.z < -15)
+        if (transform.position.z > Bounds.ArenaZRadius || transform.position.z < -Bounds.ArenaZRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
         }
-        if (transform.position.x > 29 || transform.position.x < -29)
+        if (transform.position.x > Bounds.ArenaXRadius || transform.position.x < -Bounds.ArenaXRadius)
         {
             Vector3 newLocation = new Vector3(transform.position.x * -1, transform.position.y, transform.position.z);
             transform.SetPositionAndRotation(newLocation, transform.rotation);
@@ -40,8 +38,8 @@ public class BulletMovement : MonoBehaviour
                 collision.gameObject.health--;
             if (bounces == 0)
                 Destroy(this.gameObject);
-            else
+           else
                 bounces--;
-        }
+       }
     }
 }
