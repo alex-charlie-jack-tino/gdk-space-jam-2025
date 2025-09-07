@@ -99,24 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   playerNum: 0
-  move:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 4571896e-bdda-41c5-a762-d3464f21e3a4
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  shoot:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 223ba0bd-3d8a-4150-8cc7-ce66aca5c0c6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!114 &-6193805900676206612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,14 +112,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   forwardSpeed: 5
-  backSpeed: 5
-  turnSpeed: 5
+  backSpeed: 2
+  turnSpeed: 3
   weaponType: 0
   bullet: {fileID: 0}
   dashType: 0
   holdToFire: 0
   cooldownTime: 0
-  maxSpeed: 4
+  _maxSpeed: 4
   playerControls: {fileID: -8178845484591274837}
 --- !u!54 &-7963022704731158671
 Rigidbody:
